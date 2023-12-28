@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enchainements{% endblock %}
+
+{% block body %}
+    <h1>Enchainements</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ enchainement.id }}</td>
+            </tr>
+            <tr>
+                <th>Exercice</th>
+                <td>{{ enchainement.exercice }}</td>
+            </tr>
+            <tr>
+                <th>Diet</th>
+                <td>{{ enchainement.Diet }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_enchainements_index') }}">back to list</a>
+
+    <a href="{{ path('app_enchainements_edit', {'id': enchainement.id}) }}">edit</a>
+
+    {{ include('enchainements/_delete_form.html.twig') }}
+{% endblock %}

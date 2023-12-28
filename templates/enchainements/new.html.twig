@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Enchainements{% endblock %}
+
+{% block body %}
+    <h1>Create new Enchainements</h1>
+
+    {{ include('enchainements/_form.html.twig') }}
+
+    <a href="{{ path('app_enchainements_index') }}">back to list</a>
+{% endblock %}

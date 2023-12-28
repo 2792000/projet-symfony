@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enchainements index{% endblock %}
+
+{% block body %}
+    <h1>Enchainements index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Exercice</th>
+                <th>Diet</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for enchainement in enchainements %}
+            <tr>
+                <td>{{ enchainement.id }}</td>
+                <td>{{ enchainement.exercice }}</td>
+                <td>{{ enchainement.Diet }}</td>
+                <td>
+                    <a href="{{ path('app_enchainements_show', {'id': enchainement.id}) }}">show</a>
+                    <a href="{{ path('app_enchainements_edit', {'id': enchainement.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_enchainements_new') }}">Create new</a>
+{% endblock %}
